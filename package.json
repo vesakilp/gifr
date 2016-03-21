@@ -1,0 +1,13 @@
+{
+  "name": "gifr",
+  "version": "1.0.0",
+  "description": "Gifr running on Node.js running on Docker",
+  "author": "Vesa Kilpiäinen <vesakilp@google.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
