@@ -3,22 +3,23 @@ var fs = require('fs');
 
 //TODO how to get these securely in container
 var options = {
-  key: fs.readFileSync('../cert/server-key.pem'),
-  cert: fs.readFileSync('../cert/server-cert.pem')
+  key: fs.readFileSync('server-key.pem'),
+  cert: fs.readFileSync('server-cert.pem')
 };
 
 var server = tls.createServer(options, function (socket) {
   console.log('server connected', socket.authorized ? 'authorized' : 'unauthorized');
+  //console.log('socket', socket);
   socket.on('error', function(error) {
     console.log('error occured', error);
   });
   socket.write('welcome!\n');
   socket.on('data', function (data) {
     console.log('data', data.toString());
-    //socket.end();
+    socket.end();
   });
   socket.pipe(socket);
-  socket.end();
+  //socket.end();
 });
 
 server.listen(8443, () => {

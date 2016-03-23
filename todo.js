@@ -12,6 +12,7 @@ const telegramBotToken = "214343648:AAEKHOC2AnxDPg7OW_vEBtb2mY4HGxNKw6k";
 //listening url and port should come from dockerfile / be env specific
 //https://www.example.com/<token>
 //http://192.168.99.100:49160/214343648:AAEKHOC2AnxDPg7OW_vEBtb2mY4HGxNKw6k/kakkasuu
+//ziltoid url = https://ziltoid.dy.fi:8443/214343648:AAEKHOC2AnxDPg7OW_vEBtb2mY4HGxNKw6k/
 //DOES BOT TAKE URL OR IMAGE AS RETURN VALUE, CALL SOME BOT FUNCTION? https://core.telegram.org/bots/api#inlinequeryresultgif
 //https://api.telegram.org/bot214343648:AAEKHOC2AnxDPg7OW_vEBtb2mY4HGxNKw6k/
 //1. take parameter from url
