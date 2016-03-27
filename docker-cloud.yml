@@ -1,5 +1,5 @@
 nginx:
-  image: vesakilp/nginx
+  image: nginx
   links:
     - node
   ports:
@@ -7,11 +7,13 @@ nginx:
   roles:
     - global
 node:
-  image: vesakilp/node
+  image: node
   links:
     - redis
   ports:
     - "8080:8080"
-  target_num_containers: 3
+  target_num_containers: 1
 redis:
-  image: vesakilp/redis
+  image: redis
+  ports:
+    - "6379"

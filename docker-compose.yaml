@@ -1,29 +1,17 @@
 nginx:
-    build: ./nginx
+    build: ./gifr-nginx
     links:
-        - node1:node1
-        - node2:node2
-        - node3:node3
+        - node:node
     ports:
         - "80:80"
-node1:
-    build: ./node
+node:
+    build: ./gifr-node
     links:
         - redis
     ports:
         - "8080"
-node2:
-    build: ./node
-    links:
-        - redis
-    ports:
-        - "8080"
-node3:
-    build: ./node
-    links:
-        - redis
-    ports:
-        - "8080"
+    volumes:
+        - ./gifr-node:/src
 redis:
     image: redis
     ports:
